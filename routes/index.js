@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/stripe/checkout', function(req, res, next) {
-  res.render('stripe/checkout', { title: 'Stripe Checkout' });
+  res.render('stripe/checkout', { title: 'Stripe Checkout Simple' });
+});
+
+router.get('/stripe/checkout_custom', function(req, res, next) {
+  res.render('stripe/checkout_custom', { title: 'Stripe Checkout Custom' });
 });
 
 router.get('/spike/embed', function(req, res, next) {
