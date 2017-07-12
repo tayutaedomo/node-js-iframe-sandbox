@@ -6,6 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'iframe Sandbox' });
 });
 
+router.get('/stripe/checkout', function(req, res, next) {
+  res.render('stripe/checkout', { title: 'Stripe Checkout' });
+});
+
 router.get('/spike/embed', function(req, res, next) {
   res.render('spike/embed', { title: 'SPIKE Embed' });
 });
