@@ -6,12 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'iframe Sandbox' });
 });
 
-router.get('/iframe/embed', function(req, res, next) {
-  res.render('iframe/embed', { title: 'iframe Embed Page' });
+router.get('/transparency/embed', function(req, res, next) {
+  res.render('transparency/embed', { title: 'Transparency Embed Page' });
 });
 
-router.get('/iframe/modal', function(req, res, next) {
-  res.render('iframe/modal', { title: 'iframe Modal Page' });
+router.get('/transparency/modal', function(req, res, next) {
+  res.render('transparency/modal', { title: 'Transparency Modal Page' });
 });
 
 router.get('/stripe/checkout', function(req, res, next) {
