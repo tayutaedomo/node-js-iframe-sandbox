@@ -21,14 +21,29 @@
 </div>
 
 <script type="text/javascript">
-  $('#myModal')
-    .modal('show')
-    .on('hidden.bs.modal', function(e) {
-      //var url = window.location.href.toString();
-      //var matches = url.match(/(^https?\:\/\/([^\/?#]+)(?:[\/?#]|$))/i);
-      //var origin = matches[1];
-      var origin = '*';
-      window.top.postMessage('close', origin);
-    });
+  function openModal() {
+    $('#myModal')
+      .modal('show')
+      .on('hidden.bs.modal', function(e) {
+        //var url = window.location.href.toString();
+        //var matches = url.match(/(^https?\:\/\/([^\/?#]+)(?:[\/?#]|$))/i);
+        //var origin = matches[1];
+        var origin = '*';
+        window.top.postMessage('close', origin);
+      });
+  }
+
+  function receiveMessage(event) {
+    console.log('modal receiveMessage origin:', event.origin);
+    //if (event.origin !== "http://example.com:8080") {
+    //  return;
+    //}
+
+    if (event.data == 'open') {
+      openModal();
+    }
+  }
+
+  window.addEventListener("message", receiveMessage, false);
 </script>
 

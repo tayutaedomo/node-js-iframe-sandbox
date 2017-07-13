@@ -18,7 +18,7 @@
     element.id = iframeId;
 
     element.scrolling = 'no';
-    element.allowTransparency = true;
+    element.setAttribute('allowtransparency', true);
     element.frameBorder = 0;
 
     element.style.backgroundColor = 'transparent';
@@ -44,6 +44,7 @@
   function openModal() {
     var element = document.getElementById(iframeId);
     element.style.display = 'block';
+    element.contentWindow.postMessage('open', '*');
   }
 
   function closeModal() {
@@ -52,7 +53,7 @@
   }
 
   function receiveMessage(event) {
-    console.log('receiveMessage origin:', event.origin);
+    console.log('embed receiveMessage origin:', event.origin);
     //if (event.origin !== "http://example.com:8080") {
     //  return;
     //}
