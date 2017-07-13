@@ -21,6 +21,14 @@
 </div>
 
 <script type="text/javascript">
-  $('#myModal').modal('show');
+  $('#myModal')
+    .modal('show')
+    .on('hidden.bs.modal', function(e) {
+      //var url = window.location.href.toString();
+      //var matches = url.match(/(^https?\:\/\/([^\/?#]+)(?:[\/?#]|$))/i);
+      //var origin = matches[1];
+      var origin = '*';
+      window.top.postMessage('close', origin);
+    });
 </script>
 

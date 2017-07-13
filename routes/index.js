@@ -6,6 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'iframe Sandbox' });
 });
 
+router.get('/iframe/embed', function(req, res, next) {
+  res.render('iframe/embed', { title: 'iframe Embed Page' });
+});
+
 router.get('/iframe/modal', function(req, res, next) {
   res.render('iframe/modal', { title: 'iframe Modal Page' });
 });
