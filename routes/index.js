@@ -14,20 +14,14 @@ router.get('/transparency/modal', function(req, res, next) {
   res.render('transparency/modal', { title: 'Transparency Modal Page' });
 });
 
-router.get('/stripe/checkout', function(req, res, next) {
-  res.render('stripe/checkout', { title: 'Stripe Checkout Simple' });
+
+router.get('/stripe/:view', function(req, res, next) {
+  res.render('stripe/' + req.params.view, { title: req.params.view + ' | Stripe' });
 });
 
-router.get('/stripe/checkout_custom', function(req, res, next) {
-  res.render('stripe/checkout_custom', { title: 'Stripe Checkout Custom' });
-});
 
-router.get('/spike/embed', function(req, res, next) {
-  res.render('spike/embed', { title: 'SPIKE Embed' });
-});
-
-router.get('/spike/checkout', function(req, res, next) {
-  res.render('spike/checkout', { title: 'SPIKE Checkout' });
+router.get('/spike/:view', function(req, res, next) {
+  res.render('spike/' + req.params.view, { title: req.params.view + ' | SPIKE' });
 });
 
 
